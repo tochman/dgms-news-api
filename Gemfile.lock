@@ -67,6 +67,7 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     erubi (1.10.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -157,6 +158,12 @@ GEM
     rspec-support (3.11.0)
     shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
+    simplecov (0.21.2)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -190,6 +197,7 @@ DEPENDENCIES
   rails (~> 6.1.5)
   rspec-rails
   shoulda-matchers
+  simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
 
