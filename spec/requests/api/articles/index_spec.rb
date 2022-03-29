@@ -1,5 +1,4 @@
-RSpec.describe "GET /api/articles", type: :request do
-
+RSpec.describe 'GET /api/articles', type: :request do
   let!(:articles) { create_list(:article, 5) }
 
   before do
@@ -13,5 +12,4 @@ RSpec.describe "GET /api/articles", type: :request do
   it 'is expected to return a collection of 5 articles' do
     expect(response_json['articles'].size).to eq 5
   end
-
 end
