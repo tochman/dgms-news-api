@@ -6,7 +6,7 @@ RSpec.describe 'POST /api/articles' do
     }
 
     @article = Article.last
-    # without ... expect(Article).not_to be nil
+    
   end
 
   subject { response }
