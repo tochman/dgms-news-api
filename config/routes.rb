@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   namespace :api do
-    get :articles, controller: :articles, action: :index
+    resources :articles, only: %i[index show]
   end
 end
