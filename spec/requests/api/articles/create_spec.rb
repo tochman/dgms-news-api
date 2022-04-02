@@ -1,4 +1,9 @@
 RSpec.describe 'POST /api/articles' do
+  let(:sports_category) { create(:category, name: 'Sports')}
+  let(:business_category) { create(:category, name: 'Business')}
+  let!(:sports_articles) { create_list(:article, 5, category: sports_category) }
+  let!(:business_articles) { create_list(:article, 5, category: business_category) }
+
 
   before do
     post '/api/articles', params: {
