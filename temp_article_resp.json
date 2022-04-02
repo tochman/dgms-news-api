@@ -1,0 +1,25 @@
+// NEW WAY
+
+{
+  "articles": {
+    "sports": [
+      {"id": 1, "title": "Sports 1", "body": "Sports 1 body"},
+      {"id": 2, "title": "Sports 2", "body": "Sports 2 body"},
+      {"id": 3, "title": "Sports 3", "body": "Sports 3 body"}
+    ],
+    "business": [
+      {"id": 1, "title": "Business 1", "body": "Business 1 body"},
+      {"id": 2, "title": "Business 2", "body": "Business 2 body"},
+      {"id": 3, "title": "Business 3", "body": "Business 3 body"}
+    ]
+  }
+}
+
+// OLD WAY
+{
+  "articles": [
+    {"id": 1, "title": "Sports 1", "body": "Sports 1 body"},
+    {"id": 2, "title": "Sports 2", "body": "Sports 2 body"},
+    {"id": 3, "title": "Sports 3", "body": "Sports 3 body"}
+  ]
+}
