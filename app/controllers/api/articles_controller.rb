@@ -13,6 +13,8 @@ class Api::ArticlesController < ApplicationController
 
   def create
     new_article = Article.create(params[:article].permit!)
+    binding.pry
+    # Here you need to check if the article was created or not
     render json: { article: new_article }, status: 201
   end
 
