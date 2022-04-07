@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :article do
-    title { "MyString" }
-    body { "MyText" }
+    title { "News about Sports" }
+    body { "Lorem ipsum..." }
     author { "MyString" }
+    category
   end
 end
