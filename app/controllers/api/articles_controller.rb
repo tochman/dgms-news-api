@@ -1,4 +1,5 @@
 class Api::ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: %i[show create]
   before_action :validate_params_presence, only: [:create]
 
   def index
@@ -18,7 +19,7 @@ class Api::ArticlesController < ApplicationController
     article.category = category
     article.save
     if article.persisted?
-      render json: { article: article, message: "Article created successfully" }, status: 201
+      render json: { article: article, message: 'Article created successfully' }, status: 201
     else
       render_error(article.errors.full_messages.to_sentence, 422)
     end
@@ -36,7 +37,7 @@ class Api::ArticlesController < ApplicationController
 
   def validate_params_presence
     if params[:article].nil?
-      render_error("Missing params", :unprocessable_entity)
+      render_error('Missing params', :unprocessable_entity)
     elsif params[:article][:title].nil?
       render_error("Title can't be blank", :unprocessable_entity)
     elsif params[:article][:body].nil?
