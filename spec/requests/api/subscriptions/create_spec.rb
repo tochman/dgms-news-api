@@ -4,9 +4,9 @@ RSpec.describe 'POST /api/subscriptions', type: :request do
 
   subject { response }
 
-  describe 'as a authenticated user, when subscribing' do
+  describe 'as a authenticated user' do
     before do
-      post '/api/subscriptions', params: { user: { id: user.id } }, headers: credentials
+      post '/api/subscriptions', headers: credentials
     end
 
     it { is_expected.to have_http_status 201 }
@@ -16,13 +16,13 @@ RSpec.describe 'POST /api/subscriptions', type: :request do
     end
 
     it 'is expected that the user subscription status is changed' do
-      expect(User.last.subscribed).to eq true
+      expect(user.reload.subscribed).to eq true
     end
   end
 
-  describe 'as an unauthenticated user, when subsribing' do
+  describe 'as an unauthenticated user' do
     before do
-      post '/api/subscriptions', params: { user: { id: user.id } }, headers: nil
+      post '/api/subscriptions', headers: nil
     end
 
     it { is_expected.to have_http_status 401 }
@@ -32,7 +32,7 @@ RSpec.describe 'POST /api/subscriptions', type: :request do
     end
 
     it 'is expected not to change the user subscription status' do
-      expect(User.last.subscribed).to eq false
+      expect(user.reload.subscribed).to eq false
     end
   end
 end
